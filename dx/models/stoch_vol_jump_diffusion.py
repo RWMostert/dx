@@ -65,8 +65,9 @@ class stoch_vol_jump_diffusion(simulation_class):
             self.vol_vol = mar_env.get_constant('vol_vol')
 
             self.volatility_values = None
-        except:
+        except Exception as e:
             print('Error parsing market environment.')
+            raise e
 
     def update(self, pricing_date=None, initial_value=None, volatility=None,
                vol_vol=None, kappa=None, theta=None, rho=None, lamb=None,
