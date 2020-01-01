@@ -76,8 +76,9 @@ class simulation_class(object):
                 self.cholesky_matrix = mar_env.get_list('cholesky_matrix')
                 self.rn_set = mar_env.get_list('rn_set')[self.name]
                 self.random_numbers = mar_env.get_list('random_numbers')
-        except:
+        except Exception as e:
             print('Error parsing market environment.')
+            raise e
 
     def generate_time_grid(self):
         start = self.pricing_date
