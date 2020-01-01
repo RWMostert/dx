@@ -121,8 +121,6 @@ class constant_short_rate(object):
     def __init__(self, name, short_rate):
         self.name = name
         self.short_rate = short_rate
-        if short_rate < 0:
-            raise ValueError('Short rate negative.')
 
     def get_forward_rates(self, time_list, paths=None, dtobjects=True):
         ''' time_list either list of datetime objects or list of
